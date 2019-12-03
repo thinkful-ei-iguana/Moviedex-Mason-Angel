@@ -1,9 +1,9 @@
-require('dotenv').config()
-const express = require('express')
-const morgan = require('morgan')
-const cors = require('cors')
-const helmet = require('helmet')
-const movies = require('./movieData')
+require('dotenv').config();
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
+const movies = require('./movieData');
 const app = express();
 
 app.use(morgan('dev'));
@@ -18,11 +18,11 @@ app.use(cors());
 // });
 
 
-console.log(process.env.API_TOKEN)
+console.log(process.env.API_TOKEN);
 
 app.get('/movie', function handleGetMovie(req,res){
-    res.json(movies)
-})
+  res.json(movies);
+});
 app.listen(8000, () => {
-    console.log('Server started on PORT 8000');
-  });
+  console.log('Server started on PORT 8000');
+});
